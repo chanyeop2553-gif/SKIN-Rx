@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/font.css" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/skinrx_style.css" />
+
         <title>Skinrx</title>
     </head>
     <body>
@@ -67,7 +69,22 @@
             <div class="container">
                 <section class="main_banner" aria-label="메인 프로모션 배너">
                     <h2 class="ir_so">apdls aosj</h2>
-                    <div class="rolling"><img src="img/main_roll01.png" alt="" /></div>
+                    <!-- <div class="rolling"><img src="img/main_roll01.png" alt="" /></div> -->
+                    <!-- swiper slider 만들기 -->
+                    <div class="swiper rolling">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/main_roll01.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/main_roll02.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/main_roll03.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/main_roll01.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/main_roll02.png" alt="" /></div>
+                            <div class="swiper-slide"><img src="img/main_roll03.png" alt="" /></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- swiper 끝 -->
                     <div class="event_inner">
                         <div class="feature_item">
                             <figcaption>feature item</figcaption>
@@ -167,11 +184,24 @@
                     <div class="title">
                         <h2>BRAND FOCUS</h2>
                     </div>
-                    <div class="product_box">
+                    <!-- <div class="product_box">
                         <div class="product_box"><img src="img/brand_product01.png" alt="" /></div>
                         <div class="product_box"><img src="img/brand_product02.png" alt="" /></div>
                         <div class="product_box"><img src="img/brand_product03.png" alt="" /></div>
-                    </div>
+                    </div> -->
+                    <div class="swiper product_box">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/brand_product01.png" alt="" /></div>
+        <div class="swiper-slide"><img src="img/brand_product02.png" alt="" /></div>
+        <div class="swiper-slide"><img src="img/brand_product03.png" alt="" /></div>
+        <div class="swiper-slide"><img src="img/brand_product01.png" alt="" /></div>
+        <div class="swiper-slide"><img src="img/brand_product02.png" alt="" /></div>
+        <div class="swiper-slide"><img src="img/brand_product03.png" alt="" /></div>
+        </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    </div>
                 </section>
                 <!-- brand_focus -->
 
@@ -226,10 +256,12 @@
             <div class="container">
                 <div class="footer_inner">
                     <section>
-                        <li><span>고객센터</span></li>
-                        <li><strong>1566-1140</strong></li>
-                        <li>상담시간 : 오전 9시~오후 6시(토,일 공휴일 휴무)</li>
-                        <li>점심시간 : 정오 12시~오후 1시(상담불가)</li>
+                        <ul>
+                            <li><span>고객센터</span></li>
+                            <li><strong>1566-1140</strong></li>
+                            <li>상담시간 : 오전 9시~오후 6시(토,일 공휴일 휴무)</li>
+                            <li>점심시간 : 정오 12시~오후 1시(상담불가)</li>
+                        </ul>
                     </section>
                     <section>
                         <ul>
@@ -253,5 +285,30 @@
             </div>
         </footer>
         <!-- //footer -->
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".rolling", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            });
+
+            var swiper = new Swiper('.product_box', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+        </script>
     </body>
 </html>
