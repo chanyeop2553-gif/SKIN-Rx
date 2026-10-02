@@ -1,0 +1,454 @@
+/* layout */
+#gnb {
+    width: 100%;
+    height: 32px;
+    background-color: #000;
+}
+#header {
+}
+#nav {
+}
+#main {
+}
+#footer {
+    margin-top: 100px;
+}
+.container {
+    width: 944px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* gnb */
+.gnb_inner {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#gnb h6 {
+    font-size: 0.8em;
+}
+#gnb h6 a {
+    color: #fff;
+}
+#gnb h6 a:hover {
+    color: aqua;
+}
+#gnb ul {
+    display: flex;
+}
+#gnb ul li {
+    font-size: 0.85em;
+    padding: 0 9px;
+}
+#gnb ul li :last-child {
+    padding-right: 0;
+}
+#gnb ul li a {
+    color: #fff;
+}
+#gnb ul li a:hover {
+    color: #f46464;
+}
+
+/* 이미지를 표현하는 방법 
+1)HTML태그를 통해서 표현 (img src "...")
+-중요한 이미지 배너
+2) Css 속성값으로 표현 (backgroung image)
+3) 이미지 스프라이트 방법 */
+
+/* 아이콘 */
+
+#gnb h6 span {
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    background: url(../img/icons.png) no-repeat -350px 2px;
+    margin-left: 5px;
+}
+#gnb ul li span {
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    background: url(../img/icons.png) no-repeat 0 0;
+    margin-left: 5px;
+}
+#gnb ul li:nth-child(3) span {
+    background-position: -299px 2px;
+}
+#gnb ul li:nth-child(4) span {
+    background-position: -200px 2px;
+}
+#gnb ul li:nth-child(6) span {
+    background-position: -250px 2px;
+}
+
+/* header */
+.header_inner {
+    height: 109px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul.menu {
+    display: flex;
+}
+
+ul.menu li {
+    display: flex;
+}
+ul.menu li a {
+    display: block;
+    padding: 0 11px;
+    font-weight: bold;
+
+    position: relative;
+
+    ul.menu li:first-child a {
+        padding-left: 0;
+    }
+}
+/* 가상요소: css에서 문자를 넣을 수 있다 */
+ul.menu li a.bar::after {
+    content: "";
+    width: 1px;
+    height: 11px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+ul.menu li:hover {
+    color: #860000;
+}
+
+h1.logo {
+    font-family: "Noto Serif", serif;
+    font-size: 4em;
+    letter-spacing: 3px;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* 나를 왼쪽으로 반만 이동 */
+}
+h1.logo a {
+    color: #202020;
+}
+h1.logo a span {
+    color: #818181;
+    font-weight: 200;
+}
+
+.search_box {
+    display: flex;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.search_box input {
+    display: inline-block;
+    width: 164px;
+    height: 36px;
+    padding-left: 10px;
+    outline: 0;
+    background-color: transparent;
+}
+.search_box button {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url(../img/lip.png) no-repeat center center / 80%;
+    cursor: pointer;
+}
+
+/* nav */
+#nav ul {
+    display: flex;
+    justify-content: space-around;
+    border-top: 5px solid #000;
+
+    /* height: 56px;
+  align-items: center; */
+}
+#nav ul li {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+#nav ul li a {
+    display: flex;
+    padding: 20px 0;
+    color: #000;
+}
+#nav ul li a:hover {
+    color: #860000;
+}
+
+/********* main start *********/
+/* main_banner */
+.main_banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.rolling {
+    width: 624px;
+    /* height: 456px; */
+}
+
+.rolling img {
+    width: 100%;
+}
+
+.feature_item {
+    width: 304px;
+    height: 304px;
+    border: 1px solid #818181;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+.feature_item figcaption {
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-top: 10px;
+}
+.feature_item .feature_img {
+    text-align: center;
+}
+.main_event {
+    width: 304px;
+    height: 136px;
+    background: url(../img/main_event.png) no-repeat center center / cover;
+}
+
+/*item_txt */
+.item_txt ul {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+.item_txt ul li {
+    margin-bottom: 3px;
+    /* 한즐 글자 생략 삼총사 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item_txt ul li:first-child {
+    font-weight: 900;
+    color: #292929;
+}
+.item_txt ul li:nth-child {
+    color: #616161;
+}
+.item_txt ul li span.money {
+    color: #292929;
+    font-weight: 900;
+    margin-right: 8px;
+}
+.item_txt ul li span.cancel {
+    color: #616161;
+    text-decoration: line-through;
+}
+/* title 시작 메인 섹션별로 사용 */
+.title {
+    height: 46px;
+    border-top: 5px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+.title h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    letter-spacing: 5px;
+    color: #1b1b1b;
+}
+/* title 끝 */
+
+/* speial pick */
+.special_picks {
+    margin-top: 50px;
+}
+.pick_menu {
+    border-top: 2px dotted black;
+}
+.pick_menu ul {
+    border-top: 2px dotted black;
+    display: flex;
+    justify-content: center;
+}
+.pick_menu ul li {
+    padding: 0 15px;
+    position: relative;
+}
+.pick_menu ul li a {
+    display: block;
+    padding: 15px 0;
+}
+.pick_menu ul li a:hover {
+    border-top: 4px solid #000;
+    /* position: relative;
+    top: -4px; */
+    margin-top: -4px;
+}
+
+/* 삼각형 만들기, 가상요소를 이용해서 보더의 겅질을 이용해서, */
+.triangle::before {
+    content: "";
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.pick_menu ul li a:hover .triangle::before {
+    opacity: 1;
+}
+
+.pick_box {
+    display: flex;
+}
+.pick {
+    width: 25%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.pick_img {
+    padding: 15px 0;
+}
+.pick_icon {
+    width: 25px;
+    height: 16px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    background: url(../img/icons.png) no-repeat 0 0;
+}
+.icon02 {
+    width: 48px;
+    background-position: -50px 0;
+}
+.icon4 {
+    background-position: -150 0;
+}
+
+/* magazine */
+.magazine {
+    margin-top: 50px;
+}
+.product_box {
+    display: flex;
+    justify-content: center;
+}
+
+.product_box img {
+    width: 100%;
+}
+
+/* best_contents */
+.best_contents {
+    margin-top: 50px;
+}
+
+.best_inner {
+    display: flex;
+}
+
+.best_menu {
+    width: 176px;
+}
+.best_menu li {
+}
+.best_menu li a {
+    display: block;
+    width: 100%;
+    height: 72px;
+}
+.best_menu li:nth-child(1) a {
+    background: url(../img/best_menu01.jpg);
+}
+
+.best_menu li:nth-child(2) a {
+    background: url(../img/best_menu02.jpg);
+}
+
+.best_menu li:nth-child(3) a {
+    background: url(../img/best_menu03.jpg);
+}
+
+.best_menu li:nth-child(4) a {
+    background: url(../img/best_menu04.jpg);
+}
+
+.best_menu li:nth-child(1) a:hover {
+    background: url(../img/best_menu01_r.jpg);
+}
+.best_menu li:nth-child(2) a:hover {
+    background: url(../img/best_menu02_r.jpg);
+}
+.best_menu li:nth-child(3) a:hover {
+    background: url(../img/best_menu03_r.jpg);
+}
+.best_menu li:nth-child(4) a:hover {
+    background: url(../img/best_menu04_r.jpg);
+}
+
+.best_iframe {
+    width: 768px;
+    height: 288px;
+}
+
+.seller_box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.seller_box a {
+    transition: 0.5s;
+}
+
+.seller_box a:hover {
+    filter: blur(5px);
+    /* filter: grayscale(100%); =>흑백 */
+}
+
+/* footer */
+.footer_inner {
+    display: flex;
+    border: 5px soild #000;
+    padding: 30px 0;
+}
+.footer_inner section {
+    flex: 1;
+    padding: 0 15px;
+    height: 86px;
+}
+.footer_inner section ul {
+    border-right: 1px solid #000;
+    height: inherit;
+}
+.footer_inner section ul.outlet {
+    border-right: 0;
+    border-bottom: 1px dotted #000;
+    padding-bottom: 5px;
+    height: 38px;
+}
+.footer_inner section ul li {
+    margin-bottom: 3px;
+}
+.footer_inner section ul li span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.footer_inner section ul li strong {
+    font-size: 1.7em;
+}
