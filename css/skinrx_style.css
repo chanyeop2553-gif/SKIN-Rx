@@ -2,7 +2,6 @@
 #gnb {
     width: 100%;
     height: 32px;
-    background-color: rgb(0, 0, 0);
 }
 #header {
 }
@@ -16,7 +15,6 @@
     width: 944px;
     margin: 0 auto;
     position: relative;
-    background-color: #41ffdf62;
 }
 
 /* gnb */
@@ -114,7 +112,6 @@ ul.menu li a.bar::after {
     content: "";
     width: 1px;
     height: 11px;
-    background-color: red;
     position: absolute;
     top: 2px;
     right: 0;
@@ -166,7 +163,7 @@ h1.logo a span {
 #nav ul {
     display: flex;
     justify-content: space-around;
-    border-top: 5px soild #000;
+    border-top: 5px solid #000;
 
     /* height: 56px;
   align-items: center; */
@@ -185,4 +182,262 @@ h1.logo a span {
     color: #860000;
 }
 
-/********* main *********/
+/********* main start *********/
+/* main_banner */
+.main_banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.rolling {
+    width: 624px;
+    /* height: 456px; */
+}
+.feature_item {
+    width: 304px;
+    height: 304px;
+    border: 1px solid #818181;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+.feature_item figcaption {
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-top: 10px;
+}
+.feature_item .feature_img {
+    text-align: center;
+}
+.main_event {
+    width: 304px;
+    height: 136px;
+    background: url(../img/main_event.png) no-repeat center center / cover;
+}
+
+/*item_txt */
+.item_txt ul {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+.item_txt ul li {
+    margin-bottom: 3px;
+    /* 한즐 글자 생략 삼총사 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item_txt ul li:first-child {
+    font-weight: 900;
+    color: #292929;
+}
+.item_txt ul li:nth-child {
+    color: #616161;
+}
+.item_txt ul li span.money {
+    color: #292929;
+    font-weight: 900;
+    margin-right: 8px;
+}
+.item_txt ul li span.cancel {
+    color: #616161;
+    text-decoration: line-through;
+}
+/* title 시작 메인 섹션별로 사용 */
+.title {
+    height: 46px;
+    border-top: 5px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+.title h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    letter-spacing: 5px;
+    color: #1b1b1b;
+}
+/* title 끝 */
+
+/* speial pick */
+.special_picks {
+    margin-top: 50px;
+}
+.pick_menu {
+    border-top: 2px dotted black;
+}
+.pick_menu ul {
+    border-top: 2px dotted black;
+    display: flex;
+    justify-content: center;
+}
+.pick_menu ul li {
+    padding: 0 15px;
+    position: relative;
+}
+.pick_menu ul li a {
+    display: block;
+    padding: 15px 0;
+}
+.pick_menu ul li a:hover {
+    border-top: 4px solid #000;
+    /* position: relative;
+    top: -4px; */
+    margin-top: -4px;
+}
+
+/* 삼각형 만들기, 가상요소를 이용해서 보더의 겅질을 이용해서, */
+.triangle::before {
+    content: "";
+    border-top: 5px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.pick_menu ul li a:hover .triangle::before {
+    opacity: 1;
+}
+
+.pick_box {
+    display: flex;
+}
+.pick {
+    width: 25%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.pick_img {
+    padding: 15px 0;
+}
+.pick_icon {
+    width: 25px;
+    height: 16px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    background: url(../img/icons.png) no-repeat 0 0;
+}
+.icon02 {
+    width: 48px;
+    background-position: -50px 0;
+}
+.icon4 {
+    background-position: -150 0;
+}
+
+/* magazine */
+.magazine {
+    margin-top: 50px;
+}
+.product_box {
+    display: flex;
+    justify-content: center;
+}
+
+/* best_contents */
+.best_contents {
+    margin-top: 50px;
+}
+
+.best_inner {
+    display: flex;
+}
+
+.best_menu {
+    width: 176px;
+}
+.best_menu li {
+}
+.best_menu li a {
+    display: block;
+    width: 100%;
+    height: 72px;
+}
+.best_menu li:nth-child(1) a {
+    background: url(../img/best_menu01.jpg);
+}
+
+.best_menu li:nth-child(2) a {
+    background: url(../img/best_menu02.jpg);
+}
+
+.best_menu li:nth-child(3) a {
+    background: url(../img/best_menu03.jpg);
+}
+
+.best_menu li:nth-child(4) a {
+    background: url(../img/best_menu04.jpg);
+}
+
+.best_menu li:nth-child(1) a:hover {
+    background: url(../img/best_menu01_r.jpg);
+}
+.best_menu li:nth-child(2) a:hover {
+    background: url(../img/best_menu02_r.jpg);
+}
+.best_menu li:nth-child(3) a:hover {
+    background: url(../img/best_menu03_r.jpg);
+}
+.best_menu li:nth-child(4) a:hover {
+    background: url(../img/best_menu04_r.jpg);
+}
+
+.best_iframe {
+    width: 768px;
+    height: 288px;
+}
+
+.seller_box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.seller_box a {
+    transition: 0.5s;
+}
+
+.seller_box a:hover {
+    filter: blur(5px);
+    /* filter: grayscale(100%); =>흑백 */
+}
+
+/* footer */
+.footer_inner {
+    display: flex;
+    border: 5px soild #000;
+    padding: 30px 0;
+}
+.footer_inner section {
+    flex: 1;
+    padding: 0 15px;
+    height: 86px;
+}
+.footer_inner section ul {
+    border-right: 1px solid #000;
+    height: inherit;
+}
+.footer_inner section ul.outlet {
+    border-right: 0;
+    border-bottom: 1px dotted #000;
+    padding-bottom: 5px;
+    height: 38px;
+}
+.footer_inner section ul li {
+    margin-bottom: 3px;
+}
+.footer_inner section ul li span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.footer_inner section ul li strong {
+    font-size: 1.7em;
+}
