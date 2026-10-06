@@ -1,0 +1,10 @@
+.swiper-button-next,
+.swiper-button-prev {
+    color: red;
+}
+.rolling.swiper-pagination-bullet-active {
+    background: red;
+}
+.product_box .rolling.swiper-pagination-bullet-active {
+    background: green;
+}
